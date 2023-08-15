@@ -1,6 +1,6 @@
 # Course Program API with NestJS
 
-This is a course program API built using NestJS, MongoDB, and Mongoose. The API allows you to perform CRUD operations on course programs and perform searches with filters. The API documentation is available through Swagger.
+This is a course program API built using NestJS and MongoDB. The API allows you to perform CRUD operations on course programs and perform search with filters on programs and their course. The API documentation is also available through Swagger.
 
 ## Features
 
@@ -8,11 +8,7 @@ This is a course program API built using NestJS, MongoDB, and Mongoose. The API 
 - Search and filtering functionality
 - Swagger API documentation
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+## Setup & Installation
 
 1. Clone the repository:
 
@@ -29,7 +25,7 @@ $ yarn install
 
 ## Running the app
 
-To run the application in watch mode:
+To run the application, use the following command below.
 
 ```bash
 # development
@@ -40,19 +36,6 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
 ```
 
 ## Swagger Documentation
