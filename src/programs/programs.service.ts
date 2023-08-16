@@ -34,8 +34,7 @@ export class ProgramsService {
   async getSearchedTaskWithFilters(
     searchProgramDto: SearchProgramDto,
   ): Promise<Program[]> {
-    const { country, description, institute, level, searchText } =
-      searchProgramDto;
+    const { country, institute, level, searchText } = searchProgramDto;
     const queryBuilder = this.programModel.find();
 
     if (level) {
@@ -48,10 +47,6 @@ export class ProgramsService {
 
     if (country) {
       queryBuilder.where('country').equals(country);
-    }
-
-    if (description) {
-      queryBuilder.where('description').equals(description);
     }
 
     if (searchText) {

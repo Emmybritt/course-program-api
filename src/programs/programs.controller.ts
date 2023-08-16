@@ -12,6 +12,7 @@ import { ProgramsService } from './programs.service';
 import { CreateProgramDto } from './dto/create-program.dto';
 import { UpdateProgramDto } from './dto/update-program.dto';
 import { SearchProgramDto } from './dto/search-program.dto';
+import { MongoIdValidationPipe } from 'src/shared/pipes/validation.pipe';
 
 @Controller('programs')
 export class ProgramsController {
@@ -31,17 +32,20 @@ export class ProgramsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id', MongoIdValidationPipe) id: string) {
     return this.programsService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProgramDto: UpdateProgramDto) {
+  update(
+    @Param('id', MongoIdValidationPipe) id: string,
+    @Body() updateProgramDto: UpdateProgramDto,
+  ) {
     return this.programsService.update(id, updateProgramDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id', MongoIdValidationPipe) id: string) {
     return this.programsService.remove(id);
   }
 }
