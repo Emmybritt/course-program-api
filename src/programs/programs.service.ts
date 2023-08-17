@@ -31,7 +31,7 @@ export class ProgramsService {
     return this.programModel.deleteOne({ _id: id });
   }
 
-  async getSearchedTaskWithFilters(
+  async getSearchedProgramsWithFilters(
     searchProgramDto: SearchProgramDto,
   ): Promise<Program[]> {
     const { country, institute, level, searchText } = searchProgramDto;
