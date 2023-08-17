@@ -26,7 +26,9 @@ export class ProgramsController {
   @Get()
   findAll(@Query() searchProgramDto: SearchProgramDto) {
     if (Object.keys(searchProgramDto).length >= 1) {
-      return this.programsService.getSearchedTaskWithFilters(searchProgramDto);
+      return this.programsService.getSearchedProgramsWithFilters(
+        searchProgramDto,
+      );
     }
     return this.programsService.findAll();
   }
